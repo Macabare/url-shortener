@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run URL Shortener",
+      "type": "go",
+      "request": "launch",
+      "program": "${workspaceFolder}/cmd/url-shortener",
+      "envFile": "${workspaceFolder}/local.env"
+    }
+  ]
+}
