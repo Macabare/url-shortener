@@ -10,6 +10,7 @@ import (
 	"github.com/Macabare/url-shortener/internal/http-server/handlers/health"
 	"github.com/Macabare/url-shortener/internal/http-server/handlers/url/get"
 	"github.com/Macabare/url-shortener/internal/http-server/handlers/url/save"
+	"github.com/Macabare/url-shortener/internal/http-server/handlers/url/stat"
 
 	mwLogger "github.com/Macabare/url-shortener/internal/http-server/middleware/logger"
 	sl "github.com/Macabare/url-shortener/internal/lib/logger/sl"
@@ -46,7 +47,7 @@ func main() {
 	router.Get("/health", health.New(logger))
 	router.Post("/shorten", save.New(logger, storage))
 	router.Get("/{shortCode}", get.New(logger, storage))
-	router.Get("/{shortCode}/stat", get.New(logger, storage))
+	router.Get("/{shortCode}/stat", stat.New(logger, storage))
 
 	logger.Info("starting http server...", slog.String("address", cfg.Address))
 
