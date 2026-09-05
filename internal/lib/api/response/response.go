@@ -13,8 +13,8 @@ type Response struct {
 }
 
 const (
-	StatusOk    = "Ok"
-	StatusError = "Error"
+	StatusOk    = "ok"
+	StatusError = "error"
 )
 
 func Ok() Response {
